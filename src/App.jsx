@@ -1,18 +1,21 @@
 import Header from "./Components/Header/Header";
 import WeatherBoard from "./Components/Weather/WeatherBoard";
-import { WeatherProvider } from "./provider";
+import { FavouriteProvider, WeatherProvider } from "./provider";
 const App = () => {
   return (
     <WeatherProvider>
-  <div className="grid place-items-center h-screen">
-    <Header/>
-    <main>
-      <section>
-        <WeatherBoard/>
-      </section>
-    </main>
-  </div>
-  </WeatherProvider>
-)};
+      <FavouriteProvider>
+        <div className="grid place-items-center h-screen">
+          <Header />
+          <main>
+            <section>
+              <WeatherBoard />
+            </section>
+          </main>
+        </div>
+      </FavouriteProvider>
+    </WeatherProvider>
+  );
+};
 
 export default App;
